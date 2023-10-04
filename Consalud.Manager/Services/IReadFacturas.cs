@@ -12,7 +12,7 @@ namespace Consalud.Manager.Services
         Task<IEnumerable<FacturasDTO>> GetAllFacturas();
         Task<IEnumerable<FacturasDTO>> GetFacturasByRUTAsync(string rutComprador);
         Task<string?> GetTopCompradorByCountAsync();
-        Task<IDictionary<string, double>> GetTotalComprasByCompradorAsync();
+        Task<List<FacturaRutCompradorDVDto>> GetTotalComprasByCompradorAsync();
         Task<List<FacturasByComunasDto>> GetFacturasByComunaAsync();
         Task<List<FacturasByComunasDto>> GetFacturasBySpecificComunaAsync(double comuna);
 
