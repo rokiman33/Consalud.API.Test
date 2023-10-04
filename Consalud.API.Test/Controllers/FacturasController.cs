@@ -1,10 +1,12 @@
 ﻿using Consalud.Domain.Application.Services;
 using Consalud.Manager.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 
 namespace Consalud.API.Test.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class FacturasController : ControllerBase
