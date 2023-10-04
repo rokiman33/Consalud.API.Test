@@ -25,7 +25,7 @@ namespace Consalud.API.Test.Controllers
         }
 
         [HttpGet("byRUT/{rutComprador}")]
-        public async Task<IActionResult> GetFacturasByRUT(double rutComprador)
+        public async Task<IActionResult> GetFacturasByRUT(string rutComprador)
         {
             var facturas = await _readFacturas.GetFacturasByRUTAsync(rutComprador);
             return Ok(facturas);
@@ -35,7 +35,7 @@ namespace Consalud.API.Test.Controllers
         public async Task<IActionResult> GetTopCompradorByCount()
         {
             var topCompradorRUT = await _readFacturas.GetTopCompradorByCountAsync();
-            if (topCompradorRUT.HasValue)
+            if (!string.IsNullOrEmpty(topCompradorRUT))
                 return Ok(topCompradorRUT);
             else
                 return NotFound("No se encontró ningún comprador.");
@@ -49,20 +49,21 @@ namespace Consalud.API.Test.Controllers
         }
 
         [HttpGet("byComuna")]
-        public async Task<IActionResult> GetFacturasByComuna()
+        public async Task<IActionResult> GetFacturasByComuna(double comuna)
         {
-            var facturasByComuna = _readFacturas.GetFacturasByComunaAsync();
-            return Ok(facturasByComuna);
-        }
-
-        [HttpGet("bySpecificComuna/{comuna}")]
-        public async Task<IActionResult> GetFacturasBySpecificComuna(double comuna)
-        {
-            var facturas = await _readFacturas.GetFacturasBySpecificComunaAsync(comuna);
-            if (facturas.Any())
-                return Ok(facturas);
+            if(comuna.Equals(0))
+            {
+                var facturasByComuna = await _readFacturas.GetFacturasByComunaAsync();
+                return Ok(facturasByComuna);
+            }
             else
-                return NotFound($"No se encontraron facturas para la comuna {comuna}.");
+            {
+                var facturas = await _readFacturas.GetFacturasBySpecificComunaAsync(comuna);
+                if (facturas.Any())
+                    return Ok(facturas);
+                else
+                    return NotFound($"No se encontraron facturas para la comuna {comuna}.");
+            }
         }
 
     }

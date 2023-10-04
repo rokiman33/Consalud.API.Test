@@ -26,6 +26,8 @@ namespace Consalud.Domain.Application
             var facturaDto = await _facturaService.LoadFacturaFromJson("JsonEjemplo.json");
             foreach (var factura in facturaDto.ToList())
             {
+                factura.RUTVendedorDV = $"{factura.RUTVendedor}-{factura.DvVendedor}";
+                factura.RUTCompradorDV = $"{factura.RUTComprador}-{factura.DvComprador}";
                 factura.TotalFactura = await GetCalcTotalFactura(factura.DetalleFactura.ToList());
             }
 

@@ -28,6 +28,8 @@ namespace Consalud.Model.Dto
         public string? DvVendedor { get; set; }
         public double? RUTComprador { get; set; }
         public string? DvComprador { get; set; }
+        public string? RUTCompradorDV { get; set; }
+        public string? RUTVendedorDV {  get; set; } 
         public string? DireccionComprador { get; set; }
         public double? ComunaComprador { get; set; }
         public double? RegionComprador { get; set; }
