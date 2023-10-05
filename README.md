@@ -10,10 +10,9 @@
 
 ```json
 "AppFiles": {
-  "DBFiles": "JsonEjemplo.json"
+  "DBFiles": "JsonEjemplo.json" //Esta ubicacion es la raiz de la app, pero puede ser c:\<Directorio>...
 }
 ```
-
 ### Dentro del mismo archivo se puede definir el usuario y password para generar el token
 
 ### Se incluyen los archivos Postman Collection : Consalud.API.Test.postman_collection.json y el del ambiente : Consalud.Prueba.postman_environment.json
