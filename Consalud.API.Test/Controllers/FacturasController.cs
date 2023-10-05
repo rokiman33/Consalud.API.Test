@@ -18,7 +18,6 @@ namespace Consalud.API.Test.Controllers
 
         private readonly IReadFacturas _readFacturas;
         
-
         public FacturasController(IReadFacturas readFacturas)
         {
             _readFacturas = readFacturas;

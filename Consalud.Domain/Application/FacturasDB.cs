@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Consalud.Domain.Application.Services;
 using Consalud.Model.Dto;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,17 +14,20 @@ namespace Consalud.Domain.Application
     {
         private readonly IMapper _mapper;
         private readonly FacturaService _facturaService;
+        private readonly IConfiguration _configuration;
 
-        public FacturasDB(IMapper mapper, FacturaService facturaService)
+        public FacturasDB(IMapper mapper, FacturaService facturaService, IConfiguration configuration)
         {
             _mapper = mapper;
             _facturaService = facturaService;
+            _configuration = configuration;
         }
 
         //Leer archivo json y serializar con clase
         public async Task<List<FacturasDTO>> LoadDB()
         {
-            var facturaDto = await _facturaService.LoadFacturaFromJson("JsonEjemplo.json");
+            var dbFiles = _configuration["AppFiles:DBFiles"];
+            var facturaDto = await _facturaService.LoadFacturaFromJson(dbFiles);
             foreach (var factura in facturaDto.ToList())
             {
                 factura.RUTVendedorDV = $"{factura.RUTVendedor}-{factura.DvVendedor}";
