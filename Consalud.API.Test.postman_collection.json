@@ -1,0 +1,381 @@
+{
+	"info": {
+		"_postman_id": "98baaa46-780a-496d-adf5-c5f1adc57d98",
+		"name": "Consalud.API.Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8524495"
+	},
+	"item": [
+		{
+			"name": "api",
+			"item": [
+				{
+					"name": "Facturas",
+					"item": [
+						{
+							"name": "byRUT",
+							"item": [
+								{
+									"name": "{rutComprador}",
+									"item": [
+										{
+											"name": "/api/Facturas/byRUT/:rutComprador",
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/Facturas/byRUT/:rutComprador",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Facturas",
+														"byRUT",
+														":rutComprador"
+													],
+													"variable": [
+														{
+															"key": "rutComprador",
+															"value": "<string>"
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "Success",
+													"originalRequest": {
+														"method": "GET",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/api/Facturas/byRUT/:rutComprador",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"Facturas",
+																"byRUT",
+																":rutComprador"
+															],
+															"variable": [
+																{
+																	"key": "rutComprador"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"body": ""
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "topComprador",
+							"item": [
+								{
+									"name": "/api/Facturas/topComprador",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/Facturas/topComprador",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Facturas",
+												"topComprador"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/Facturas/topComprador",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Facturas",
+														"topComprador"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "comprasByComprador",
+							"item": [
+								{
+									"name": "/api/Facturas/comprasByComprador",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/Facturas/comprasByComprador",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Facturas",
+												"comprasByComprador"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/Facturas/comprasByComprador",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Facturas",
+														"comprasByComprador"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "byComuna",
+							"item": [
+								{
+									"name": "/api/Facturas/byComuna",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/Facturas/byComuna?comuna=<double>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Facturas",
+												"byComuna"
+											],
+											"query": [
+												{
+													"key": "comuna",
+													"value": "<double>"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/Facturas/byComuna?comuna=<double>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Facturas",
+														"byComuna"
+													],
+													"query": [
+														{
+															"key": "comuna",
+															"value": "<double>"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "/api/Facturas",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6WyJhZG1pbiIsIkN1c3RvbU9iamVjdENhbkJlQWRkZWRIZXJlIl0sIm5iZiI6MTY5NjQ3MTAxMSwiZXhwIjoxNjk2NTU3NDExLCJpYXQiOjE2OTY0NzEwMTF9.X5xzizAaxySeASNT0nX6ckGaHs0f5KFYShVqITkj5jQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/Facturas",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Facturas"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/Facturas",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Facturas"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Token",
+					"item": [
+						{
+							"name": "/api/Token",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"password\": \"<string>\",\n  \"username\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/Token",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Token"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"password\": \"<string>\",\n  \"username\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/Token",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Token"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "/"
+		}
+	]
+}
